@@ -40,6 +40,9 @@ public class InsumosModel{
 	@JsonProperty(access = Access.WRITE_ONLY) 
 	private TipoMovimiento tipoMovimiento;
 	
+	@ManyToOne
+	@JsonProperty(access = Access.WRITE_ONLY) 
+	private ProductoModel productoModel;
 	
 
 	

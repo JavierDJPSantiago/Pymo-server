@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,9 +35,9 @@ public class ProductoModel{
 	@JsonProperty(access = Access.WRITE_ONLY) 
 	private BodegaModel bodegaModel;
 	
+	@OneToMany(mappedBy = "producto")
+    private List<InsumosModel> insumosModel;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private List<InsumosModel> insumosModel;
 
 	// Constructor
 		public ProductoModel() {
